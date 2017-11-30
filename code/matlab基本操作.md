@@ -115,6 +115,7 @@ c=[a;b] %竖向合并a、b。结果如下:
 
 ## 计算数据
 * c=[1 1;2 2]
+
 ```
 a*c % 矩阵相乘
 a.*c % 矩阵点除，矩阵中的每个元素一和相乘
@@ -129,4 +130,113 @@ log(v) % 对于矩阵每个元素x,求自然对数(ln),即求x是e几次方
 floor(a) % 向下取整(矩阵每个元素) 2.1变为2；2.7变为2
 cell(a) % 向上取整(矩阵每个元素) 2.1变为3；2.7变为3
 round(a) % 四舍五入(矩阵每个元素) 2.1变为2；2.7 变为3
+
 ```
+
+* a' %求转置矩阵
+
+```
+pinv(a) % 求逆矩阵(reverse) -伪逆
+
+max(a) % 最大值
+[value,index]=max(a) % 最大值的行号
+
+a=[1 4 6 2]
+a<3 结果为[1 0 0 1],即[是 否 否 是]
+find(a<3) %查找。结果为[1,4],即[第1=1 第4个=2]
+sum(a) % 连加求和(∑)。 ∑a=1+4+6+2=13
+prod(a) %连乘求积(Π)。Πa=1*4*6*2=48
+
+```
+
+* a=magic(3) % 可以生成一个3*3的幻方阵列，用于测试
+
+```
+8 [temp空格] 1 6
+3  5  7
+4  9  2
+
+```
+
+## 数据图示
+1.
+```
+t=[0:0.01:0.98];
+y1=sin(2*pi*4*t)
+plot(t,y1);
+
+```
+
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=92d125ac5143fbf2c52ca62b807fca1e/b86d9345d688d43fd31991567f1ed21b0ff43b4b.jpg)  
+
+---
+
+2.
+```
+y2=cos(2*pi*4*t);
+hold on; %保存原来的图
+plot(T,Y2);
+
+```
+
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=45b566d7f9f2b211e42e8546fa816511/d62bd788d43f8794f14f488ad01b0ef41ad53a4b.jpg)  
+
+---
+
+3.
+```
+xlabel('time') % x轴标签('value') %
+y轴标签
+legend('sin','cos') % 图例
+title('my plot') % 标题
+print -dpng 'myplot.png' % 图示存成png图片文件
+
+```
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=05cece66b0119313c743ffb855390c10/92e6d53f8794a4c22b93e78f0cf41bd5ac6e394b.jpg)  
+
+---
+
+4.
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=05cece66b0119313c743ffb855390c10/92e6d53f8794a4c22b93e78f0cf41bd5ac6e394b.jpg)  
+
+```
+figure(1); plot(t,y1); %开一新个窗口显示图形
+figure(2); plot(t,y2); %开另一个窗口显示图形
+clf,% 清空图形
+
+```
+---
+
+5.
+```
+subplot(1,2,1)； % 分割图形显示窗口(左侧)
+plot(t,y1)；
+subplot(1,2,2): % 分割图形显示窗口(右侧)
+plot(t,y2);
+axis([0.5 1 -1 1]) % 改变坐标轴数值范围
+
+```
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=ac7f87859113b07ebdbd50003cd69113/90518694a4c27d1e85963b6019d5ad6edcc4384b.jpg)   
+
+6.
+```
+a=magic(5); % 5*5幻方
+imagesc(a); % 作为图像显示
+
+```
+
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=ea9ca687b27eca80120539efa1229712/c3faa5c27d1ed21b56792e41af6eddc450da3f4b.jpg)  
+
+---
+
+7.
+
+```
+
+imagesc(a),colorbar,colormap gray; % 显示图例，灰度图
+a=1，b=2， c=3 % 连续执行3句，输出结果
+a=1; b=2; c=3 % 连续执行3句，不输出结果
+
+```
+
+![](http://imgsrc.baidu.com/forum/w%3D580/sign=ca9e85eac88065387beaa41ba7dca115/e0ac7c1ed21b0ef4425898fadfc451da80cb3e4b.jpg)  
