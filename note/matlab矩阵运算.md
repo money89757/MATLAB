@@ -204,3 +204,13 @@ c=
 |hankel|hankel矩阵|toeplitz|Toeplitz矩阵|
 |hilb|Hilbert矩阵|vander|范德蒙矩阵|
 |invhilb|反Hibert矩阵|wilkinson|Wilkinson's特征值测试矩阵|
+`表中除了eye外，其他函数都能生成三维以上的多维数组，而eye(m,n)可  
+生成非方针的单位阵`
+
+#### 拼接函数和变形函数法
+拼接函数是指用cat和repmat函数将多个或单个小矩阵或沿行、或沿列  
+方向拼接长的一个大矩阵。  
+cat函数的使用格式是:cat(m,A1,A2,A3...),n=1时,表示沿行方向拼接；  
+n=2,表示沿列方向拼接。n可以是大于2的数字,此时拼接出的是多维数组。  
+repmat函数的使用格式是：repmat(A,m,n...),m和n分别是沿行和沿列方向  
+重复拼接矩阵A的次数。
