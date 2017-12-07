@@ -204,6 +204,7 @@ c=
 |hankel|hankel矩阵|toeplitz|Toeplitz矩阵|
 |hilb|Hilbert矩阵|vander|范德蒙矩阵|
 |invhilb|反Hibert矩阵|wilkinson|Wilkinson's特征值测试矩阵|
+
 `表中除了eye外，其他函数都能生成三维以上的多维数组，而eye(m,n)可  
 生成非方针的单位阵`
 
