@@ -32,5 +32,4 @@ MATLAB提供的符号函数Taylor()可以实现一元函数的Taylor级数展开
 3. r=taylor(F,n,v,a);返回符号表达式f中指定的符号自变量v的n-1阶的Taylor  级数(在指定的a点附近v=a)的展开式。其中a可以是一数值、符号、  代表一数字值得字符串或未知变量。需要指出的是,用户可以以任意次序输入参量n、v与a,taylor函数能从它们的位置与类型确定它们的目的。  
 解析函数f(x)在点x=a的Taylor级数定义为：  
 
-![1](./picture/taylor.JPG)
-
+![](/picture/taylor.JPG)
